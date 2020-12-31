@@ -18,17 +18,13 @@ client.once('disconnect', () => {
 
 client.on('message', (receivedMessage) => {
     if (receivedMessage.author == client.user) return;
-    
-    console.log(receivedMessage.content);
-    processCommand(receivedMessage);
+    else processCommand(receivedMessage);
 })
 
 
 function processCommand(receivedMessage){
 
     var num = counter % 20;
-    console.log(counter);
-    console.log(num);
 
     switch(num){
 
