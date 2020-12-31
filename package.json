@@ -1,0 +1,22 @@
+{
+  "name": "krmartin",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaryarajoju/krmartin.git"
+  },
+  "author": "AARYA RAJOJU",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaryarajoju/krmartin/issues"
+  },
+  "homepage": "https://github.com/aaryarajoju/krmartin#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
