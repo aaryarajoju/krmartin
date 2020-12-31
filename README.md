@@ -43,7 +43,7 @@ The Martian Chatbot
 
 ## Run it for yourself
 
-Prerequisites: [Node.JS](https://nodejs.org/en/) (and [npm](https://www.npmjs.com/)), your bot's token, an api key from [Alpha Vantage](https://www.alphavantage.co/), and an api key from [Weather API](https://www.weatherapi.com/).
+Prerequisites: [Node.JS](https://nodejs.org/en/) (and [npm](https://www.npmjs.com/)), and your bot's token.
 
 Fork [the repository](https://github.com/aaryarajoju/AR50), and then clone it to your local device. <br>
 In that directory, install [Discord.JS](https://discord.js.org/#/) with the command `npm install discord.js`. <br>
