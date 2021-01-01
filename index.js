@@ -24,7 +24,7 @@ client.on('message', (receivedMessage) => {
 
 function processCommand(receivedMessage){
 
-    var num = counter % 20;
+    var num = counter % 23;
 
     switch(num){
 
@@ -127,6 +127,21 @@ function processCommand(receivedMessage){
             counter++;
             messageCommand19(receivedMessage);
             break;
+
+        case 20:
+            counter++;
+            messageCommand20(receivedMessage);
+            break;
+        
+        case 21:
+            counter++;
+            messageCommand21(receivedMessage);
+            break;
+
+        case 22:
+            counter++;
+            messageCommand22(receivedMessage);
+            break;
     }
     num = 0;
 }
@@ -209,6 +224,18 @@ function messageCommand18(receivedMessage){
 
 function messageCommand19(receivedMessage){
     receivedMessage.channel.send('food night!');
+}
+
+function messageCommand20(receivedMessage){
+    receivedMessage.channel.send('iq = ∞');
+}
+
+function messageCommand21(receivedMessage){
+    receivedMessage.channel.send('mind = blown');
+}
+
+function messageCommand22(receivedMessage){
+    receivedMessage.channel.send('voot?');
 }
 
 
