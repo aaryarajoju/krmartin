@@ -38,6 +38,9 @@ The Martian Chatbot
 `very good ⛧` <br>
 `-_-` <br>
 `food night!` <br>
+`iq = ∞` <br>
+`mind = blown` <br>
+`voot/` <br>
 
 ---
 
