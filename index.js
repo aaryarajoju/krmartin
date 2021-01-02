@@ -2,7 +2,55 @@ const Discord = require("discord.js");
 const {token} = require('./config.json');
 const client = new Discord.Client;
 
-var counter = 0;
+// global variables
+/* var counter = 0; */
+const trigger = [
+    //0 
+    ["hi", "hey", "hello"],
+    //1
+    ["how are you", "how are things"],
+    //2
+    ["what is going on", "what is up"],
+    //3
+    ["happy", "good", "well", "fantastic", "cool"],
+    //4
+    ["bad", "bored", "tired", "sad"],
+    //5
+    ["tell me story", "tell me joke"],
+    //6
+    ["thanks", "thank you"],
+    //7
+    ["bye", "good bye", "goodbye"]
+];
+    
+const reply = [
+    //0 
+    ["Hello!", "Hi!", "Hey!", "Hi there!"], 
+    //1
+    ["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
+    //2
+    ["Nothing much", "Exciting things!"],
+    //3
+    ["Glad to hear it"],
+    //4
+    ["Why?", "Cheer up buddy"],
+    //5
+    ["What about?", "Once upon a time..."],
+    //6
+    ["You're welcome", "No problem"],
+    //7
+    ["Goodbye", "See you later"],
+];
+
+const alternative = [
+    "Same",
+    "Go on...",
+    "Try again",
+    "I'm listening...",
+    "Bro...",
+    "What?"
+];
+
 
 
 client.once('ready', () => {
@@ -18,10 +66,29 @@ client.once('disconnect', () => {
 
 client.on('message', (receivedMessage) => {
     if (receivedMessage.author == client.user) return;
-    else processCommand(receivedMessage);
+    else textCommand(receivedMessage);
 })
 
 
+function textCommand(receivedMessage){
+
+    let rawText = receivedMessage.content.toLowerCase();
+
+    let text = rawText.replace(/[^\w\s\d]/gi, "");
+    text = text
+        .replace(/ a /g, " ")
+        .replace(/i feel /g, "")
+        .replace(/whats/g, "what is")
+        .replace(/please /g, "")
+        .replace(/ please/g, "");
+
+    // remove this later on
+    console0.log(text, rawText);
+
+}
+
+
+/*
 function processCommand(receivedMessage){
 
     var num = counter % 23;
@@ -237,6 +304,7 @@ function messageCommand21(receivedMessage){
 function messageCommand22(receivedMessage){
     receivedMessage.channel.send('voot?');
 }
+*/
 
 
 client.login(token);
