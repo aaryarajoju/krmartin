@@ -4,40 +4,24 @@ const client = new Discord.Client;
 
 // global variables
 const trigger = [
-    //0 
     ["hi", "hey", "hello"],
-    //1
     ["how are you", "how are things"],
-    //2
     ["what is going on", "what is up"],
-    //3
     ["happy", "good", "well", "fantastic", "cool"],
-    //4
     ["bad", "bored", "tired", "sad"],
-    //5
     ["tell me story", "tell me joke"],
-    //6
     ["thanks", "thank you"],
-    //7
     ["bye", "good bye", "goodbye"]
 ];
     
 const reply = [
-    //0 
     ["Hello!", "Hi!", "Hey!", "Hi there!"], 
-    //1
     ["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
-    //2
     ["Nothing much", "Exciting things!"],
-    //3
     ["Glad to hear it"],
-    //4
     ["Why?", "Cheer up buddy"],
-    //5
     ["What about?", "Once upon a time..."],
-    //6
     ["You're welcome", "No problem"],
-    //7
     ["Goodbye", "See you later"],
 ];
 
@@ -81,9 +65,37 @@ function textCommand(receivedMessage){
         .replace(/please /g, "")
         .replace(/ please/g, "");
 
-    // remove this later on
-    console0.log(text, rawText);
 
+    let replyMessage = replyTextCommand(trigger, reply, alternative, text);
+
+    sendReplyCommand(replyMessage, receivedMessage);
+}
+
+function replyTextCommand(triggerArray, replyArray, alternativeArray, text) {
+    let item;
+    for (let x = 0; x < triggerArray.length; x++) {
+      for (let y = 0; y < replyArray.length; y++) {
+        if (triggerArray[x][y] == text) {
+            items = replyArray[x];
+            item = items[Math.floor(Math.random() * items.length)];
+        }
+      }
+    }
+
+    if (item == undefined){
+        item = alternativeArray[Math.floor(Math.random() * alternativeArray.length)];
+    }
+
+    return item;
+}
+
+function sendReplyCommand(replyMessage, receivedMessage){
+
+    if (receivedMessage.content.toLowerCase() == "are you dumb?"){
+        receivedMessage.channel.send("yeh  : )");
+    } else {
+        receivedMessage.channel.send(replyMessage);
+    }
 }
 
 
