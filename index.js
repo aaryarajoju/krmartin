@@ -1,63 +1,66 @@
 const Discord = require("discord.js");
 const {token} = require('./config.json');
-// const {trigger, reply, alternative} = require('./constants.js')
 const client = new Discord.Client;
 
 
 const trigger = [
-    ["hi", "hey", "hello", "good morning", "good afternoon"],
-    ["how are you", "how is life", "how are things"],
-    ["what are you doing", "what is going on", "what is up"],
-    ["how old are you"],
-    ["who are you", "are you human", "are you bot", "are you human or bot"],
-    ["who created you", "who made you"],
-    ["your name please", "your name", "may i know your name", "what is your name", "what call yourself"],
-    ["i love you"],
-    ["happy", "good", "fun", "wonderful", "fantastic", "cool"],
-    ["bad", "bored", "tired"],
-    ["help me", "tell me story", "tell me joke"],
-    ["ah", "yes", "ok", "okay", "nice"],
-    ["bye", "good bye", "goodbye", "see you later"],
-    ["what should i eat today"],
-    ["bro"],
-    ["what", "why", "how", "where", "when"],
-    ["no","not sure","maybe","no thanks"],
-    [""],
-    ["haha","ha","lol","hehe","funny","joke"],
-    ["youre pretty", "you know krishma"]
-]   
-    
-  const reply = [
-    ["Hello!", "Hi!", "Hey!", "Hi there!","Howdy"],
-    ["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
-    ["Nothing much", "About to go to sleep", "Can you guess?", "I don't know actually"],
-    ["I am infinite"],
-    ["I am krmartin, And you?"],
-    ["The one true God, JavaScript"],
-    ["I am nameless", "I don't have a name"],
-    ["I love you too", "Me too"],
-    ["Have you ever felt bad?", "Glad to hear it"],
-    ["Why?", "Why? You shouldn't!", "Try watching TV"],
-    ["What about?", "Once upon a time..."],
-    ["Tell me a story", "Tell me a joke", "Tell me about yourself"],
-    ["Bye", "Goodbye", "See you later"],
-    ["Sushi", "Pizza"],
-    ["Bro!"],
-    ["Great question"],
-    ["That's ok","I understand","What do you want to talk about?"],
-    ["Please say something :("],
-    ["Haha!","Good one!"],
-    ["ik  : )"]
+    /*0*/["hi", "hii", "hey", "heyy", "hello", "good morning", "morning", "good afternoon"],
+    /*1*/["how are you", "how is life", "how are things"],
+    /*2*/["what are you doing", "what is going on", "what is up"],
+    /*3*/["how old are you"],
+    /*4*/["who are you", "are you human", "are you bot", "are you human or bot"],
+    /*5*/["who created you", "who made you"],
+    /*6*/["your name please", "your name", "may i know your name", "what is your name", "what call yourself"],
+    /*7*/["i love you"],
+    /*8*/["happy", "good", "fun", "wonderful", "fantastic", "cool"],
+    /*9*/["bad", "bored", "tired"],
+    /*10*/["help me", "tell me story", "tell me joke"],
+    /*11*/["ah", "yes", "ok", "okay", "nice"],
+    /*12*/["bye", "good bye", "goodbye", "see you later"],
+    /*13*/["what should i eat today"],
+    /*14*/["bro"],
+    /*15*/["what", "why", "how", "where", "when"],
+    /*16*/["no","not sure","maybe","no thanks"],
+    /*17*/[""],
+    /*18*/["haha","ha","lol","hehe","funny","joke"],
+    /*19*/["youre pretty", "you know krishma"]
 ]
-    
-  const alternative = [
-    "Same",
-    "Go on...",
-    "Bro...",
-    "Try again",
-    "I'm listening...",
-    "I don't understand :/",
-    "voot?"
+
+const reply = [
+    /*0*/["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
+    /*1*/["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?", "Gucci  : )"],
+    /*2*/["Nothing much", "About to go to sleep", "Can you guess?", "I don't know actually"],
+    /*3*/["I am infinite"],
+    /*4*/["I am a martian chatbot"],
+    /*5*/["Rogers  : )"],
+    /*6*/["I am krmartin"],
+    /*7*/["I love me too", "Me too"],
+    /*8*/["Have you ever felt bad?", "Glad to hear it"],
+    /*9*/["Why?", "Why? You shouldn't!", "Try watching TV"],
+    /*10*/["What about?", "Once upon a time..."],
+    /*11*/["Tell me a story", "Tell me a joke", "Tell me about yourself"],
+    /*12*/["Bye", "Goodbye", "See you later"],
+    /*13*/["Sushi", "Pizza", "Spaghetti"],
+    /*14*/["Bro!"],
+    /*15*/["Great question"],
+    /*16*/["That's ok","I understand","What do you want to talk about?"],
+    /*17*/["Please say something :("],
+    /*18*/["Haha!","Good one!"],
+    /*19*/["ik  : )"]
+]
+
+const alternative = [
+    "ig",
+    "wow",
+    "wow lol",
+    "ikr",
+    "anyways,",
+    "I don't understand, but okay ig",
+    "voot?",
+    "damnnnn",
+    "forget it",
+    "well",
+    "understandable ig"
 ]
 
 
@@ -90,9 +93,7 @@ function textCommand(receivedMessage){
         .replace(/please /g, "")
         .replace(/ please/g, "");
 
-
     let replyMessage = replyTextCommand(trigger, reply, alternative, text);
-
     sendReplyCommand(replyMessage, receivedMessage);
 }
 
@@ -120,6 +121,8 @@ function sendReplyCommand(replyMessage, receivedMessage){
 
     if (receivedMessage.content.toLowerCase() == "are you dumb?"){
         receivedMessage.channel.send("yeh  : )");
+    } else if (receivedMessage.content.toLowerCase() == "food night") {
+        receivedMessage.channel.send("Food night!");
     } else {
         receivedMessage.channel.send(replyMessage);
     }
