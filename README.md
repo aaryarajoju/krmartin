@@ -16,34 +16,6 @@ The Martian Chatbot
 
 ---
 
-## The Messages
-
-`ig` <br>
-`lol` <br>
-`wow` <br>
-`ikr` <br>
-`hooman!` <br>
-`ic` <br>
-`understandable ig` <br>
-`well` <br>
-`stay holy` <br>
-`anyways` <br>
-`damnnnn` <br>
-`**speechless face**` <br>
-`forget it` <br>
-`but it's okay ig` <br>
-`coolcool` <br>
-`: )` <br>
-`wow lol` <br>
-`very good ⛧` <br>
-`-_-` <br>
-`food night!` <br>
-`iq = ∞` <br>
-`mind = blown` <br>
-`voot/` <br>
-
----
-
 ## Run it for yourself
 
 Prerequisites: [Node.JS](https://nodejs.org/en/) (and [npm](https://www.npmjs.com/)), and your bot's token.
