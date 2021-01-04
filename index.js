@@ -23,7 +23,9 @@ const trigger = [
     ["no", "not sure", "maybe", "no thanks"],
     [""],
     ["haha", "ha", "lol", "hehehe", "funny", "joke"],
-    ["youre pretty", "do you know krishma"]
+    ["youre pretty", "do you know krishma"],
+    ["anyways"],
+    ["wait"]
 ]
 
 const reply = [
@@ -46,7 +48,9 @@ const reply = [
     ["That's ok","I understand","What do you want to talk about?"],
     ["Please say something :("],
     ["Haha!","Good one!"],
-    ["ik  : )", "yeh  : )"]
+    ["ik  : )", "yeh  : )"],
+    ["anyways voot?"],
+    ["W\nA\nI\nT\nI\nN\nG\n.."]
 ]
 
 const alternative = [
