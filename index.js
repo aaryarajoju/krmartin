@@ -77,7 +77,7 @@ client.once('disconnect', () => {
 
 client.on('message', (receivedMessage) => {
     if (receivedMessage.author == client.user) return;
-    else textCommand(receivedMessage);
+    else sendReplyCommand(receivedMessage);
 })
 
 
@@ -94,7 +94,7 @@ function textCommand(receivedMessage){
         .replace(/ please/g, "");
 
     let replyMessage = replyTextCommand(trigger, reply, alternative, text);
-    sendReplyCommand(replyMessage, receivedMessage);
+    return replyMessage
 }
 
 function replyTextCommand(triggerArray, replyArray, alternativeArray, text) {
@@ -117,13 +117,18 @@ function replyTextCommand(triggerArray, replyArray, alternativeArray, text) {
     return item;
 }
 
-function sendReplyCommand(replyMessage, receivedMessage){
+function sendReplyCommand(receivedMessage){
 
     if (receivedMessage.content.toLowerCase() == "are you dumb?"){
         receivedMessage.channel.send("yeh  : )");
+    } else if (receivedMessage.content.toLowerCase() == "69" || receivedMessage.content.toLowerCase() == "420") {
+        receivedMessage.channel.send("Nice");
+    } else if (receivedMessage.content.toLowerCase() == "what is the meaning of life?") {
+        receivedMessage.channel.send("42  : )");
     } else if (receivedMessage.content.toLowerCase() == "food night") {
         receivedMessage.channel.send("Food night!");
     } else {
+        replyMessage = textCommand(receivedMessage)
         receivedMessage.channel.send(replyMessage);
     }
 }
